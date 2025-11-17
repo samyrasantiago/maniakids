@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
+    <div id="top-anchor"></div> <header>
         <div class="container">
             <h1><a href="index.html"><img src="assets/logo.png" alt="Mania Kids Logo"></a></h1>
-            <nav>
+            
+            <nav id="nav-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="historia.html">Nossa História</a></li>
@@ -18,6 +19,12 @@
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
+
+            <button class="hamburger-button" id="hamburger-button" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -37,10 +44,10 @@
 
             <div class="product-card">
                 <img src="assets/kitmochilas.png" alt="Mochilas Escolares e para o Dia a Dia Mania Kids">
-                <h3>Mochilas: Estilo, Conforto e Qualidade para Todas as Idades!</h3>
+                <h3>Mochilas Mania Kids: Estilo, Conforto e Qualidade para Todas as Idades!</h3>
                 <p>Prepare-se para o dia a dia com a nossa incrível coleção de mochilas! Temos opções vibrantes para a escola, modelos práticos para o trabalho e designs modernos para suas aventuras. Encontre a mochila perfeita que une resistência, conforto e o seu estilo!</p>
                 <a href="https://wa.me/5527996000621?text=Olá!%20Tenho%20interesse%20nas%20Mochilas%20da%20Mania%20Kids%20e%20gostaria%20de%20ver%20os%20modelos!" target="_blank" class="whatsapp-button">
-                    Explore Nossos Modelos no WhatsApp
+                    Veja Nossos Modelos no WhatsApp
                 </a>
             </div>
 
@@ -49,17 +56,16 @@
                 <h3>Moda Infantil Feminina: Conforto e Fofura</h3>
                 <p>Descubra nossa coleção de conjuntos femininos que unem estilo, conforto e a alegria das crianças. Peças práticas e charmosas para todas as ocasiões e idades!</p>
                 <a href="https://wa.me/5527996000621?text=Olá!%20Tenho%20interesse%20nos%20conjuntos%20infantis%20femininos!" target="_blank" class="whatsapp-button">
-                    Ver Opções Femininas no WhatsApp
+                    Veja Nossos Modelos no WhatsApp
                 </a>
             </div>
             
-
             <div class="product-card">
                 <img src="assets/acessorios.jpg" alt="Acessórios Diversos e Eletrônicos Mania Kids">
                 <h3>Acessórios e Eletrônicos: Tudo para o seu Dia a Dia!</h3>
                 <p>De cabos e carregadores a controles remotos universais, temos uma variedade de acessórios e pequenos eletrônicos para facilitar a sua vida. Encontre o que você precisa!</p>
                 <a href="https://wa.me/5527996000621?text=Olá!%20Tenho%20interesse%20em%20acessórios%20e%20eletrônicos%20diversos!" target="_blank" class="whatsapp-button">
-                    Conferir Acessórios no WhatsApp
+                    Veja Nossos Modelos no WhatsApp
                 </a>
             </div>
 
@@ -68,8 +74,12 @@
 
     <footer>
         <div class="container">
+            <a href="#top-anchor" id="back-to-top" title="Voltar ao Topo">
+                &uarr; </a>
             <p>© 2025 Mania Kids. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

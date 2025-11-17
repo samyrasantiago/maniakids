@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
+    <div id="top-anchor"></div> <header>
         <div class="container">
             <h1><a href="index.html"><img src="assets/logo.png" alt="Mania Kids Logo"></a></h1>
-            <nav>
+            
+            <nav id="nav-menu">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="historia.html">Nossa História</a></li>
@@ -18,13 +19,22 @@
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
+
+            <button class="hamburger-button" id="hamburger-button" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
     <section id="hero">
         <div class="container">
-            <h2>Mania Kids</h2>
-            <p>20 anos de tradição, qualidade e carinho no seu bairro!</p>
+            <p>
+                <strong>
+                    20 anos de tradição, qualidade e carinho no seu bairro!
+                </strong>
+            </p>
             <a href="catalogo.html" class="button">Explore Nosso Catálogo</a>
         </div>
     </section>
@@ -40,8 +50,13 @@
 
     <footer>
         <div class="container">
+            <a href="#top-anchor" id="back-to-top" title="Voltar ao Topo">
+                &uarr; </a>
             <p>© 2025 Mania Kids. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script src="js/main.js"></script>
+
 </body>
 </html>
