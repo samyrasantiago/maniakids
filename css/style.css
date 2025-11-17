@@ -1,0 +1,375 @@
+/* css/style.css */
+
+/* Reset básico para remover margens e preenchimentos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #F8F8F8; /* Fundo cinza muito claro */
+    color: #333333; /* Texto em cinza escuro para bom contraste */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden; /* Limpa floats */
+    padding: 20px 0;
+}
+
+/* Header (cabeçalho) */
+header {
+    background: #FF0000; /* Vermelho vivo para o header */
+    color: #fff; /* Texto branco para contraste no header vermelho */
+    min-height: 70px;
+    border-bottom: #FFD700 3px solid; /* Amarelo brilhante na linha inferior */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+header h1 {
+    float: none;
+    margin: 0;
+    padding: 0;
+}
+
+header h1 a {
+    color: #fff; /* Texto branco para o título da logo no header vermelho */
+    text-decoration: none;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+}
+
+header h1 img {
+    height: 150px;
+    margin-right: 0;
+    vertical-align: middle;
+}
+
+header nav {
+    float: none;
+    margin-top: 0;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header li {
+    display: inline;
+    padding: 0 15px;
+}
+
+header a {
+    color: #fff; /* Cor do link no header vermelho */
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header a:hover {
+    color: #FFD700; /* Amarelo brilhante no hover do menu */
+    font-weight: bold;
+}
+
+/* Seção de Destaque/Hero */
+#hero {
+    min-height: 400px;
+    background: #555 url('../assets/fachada.jpg') no-repeat center center/cover;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#hero::before { /* Overlay escuro para melhorar a leitura do texto */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 50% de opacidade */
+    z-index: 1;
+}
+
+#hero * { /* Garante que o conteúdo fique acima do overlay */
+    z-index: 2;
+    position: relative;
+}
+
+#hero h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Botões gerais */
+.button {
+    display: inline-block;
+    color: #333333; /* Texto escuro para botões amarelos */
+    background: #FFD700; /* Amarelo brilhante para botões principais */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    font-weight: bold;
+    margin-top: 20px; /* Margem padrão para botões abaixo de texto */
+}
+
+.button:hover {
+    background: #FFCCCC; /* Vermelho claro no hover */
+    color: #FF0000; /* Cor do texto no hover para contraste */
+}
+
+/* Conteúdo geral das seções */
+section {
+    padding: 20px 0;
+    margin-bottom: 20px;
+    background: #fff; /* Fundo branco para seções de conteúdo */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FFD700; /* Amarelo brilhante para títulos de seção */
+}
+
+/* Estilo para parágrafos de introdução centrais */
+.section-intro-text {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Página de História */
+.history-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.history-section.reverse {
+    flex-direction: row-reverse; 
+}
+
+.history-section img {
+    width: 45%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 2.5%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.history-section div {
+    width: 45%;
+    padding: 20px;
+}
+
+.history-section:not(.reverse) div {
+    padding-left: 0;
+    padding-right: 20px;
+}
+
+.history-section.reverse div {
+    padding-right: 0;
+    padding-left: 20px;
+}
+
+.history-section h3 {
+    color: #FF0000; /* Vermelho vivo para subtítulos de história */
+    margin-bottom: 10px;
+}
+
+.history-section p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Galeria de Produtos (Catálogo) - CORREÇÕES DE ALINHAMENTO AQUI */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    align-items: stretch; /* Garante que os itens se estiquem para a mesma altura */
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out;
+    display: flex; /* Transforma o card em um flex container */
+    flex-direction: column; /* Organiza os itens verticalmente */
+    justify-content: space-between; /* Empurra o botão para baixo */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.product-card h3 {
+    margin: 15px 0 10px;
+    color: #333333;
+    font-size: 20px;
+}
+
+.product-card p {
+    padding: 0 15px 15px;
+    font-size: 15px;
+    color: #555555;
+    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço disponível */
+}
+
+/* Estilo específico para o botão do WhatsApp no card de produto */
+.product-card .whatsapp-button {
+    display: block;
+    background: #25d366;
+    color: #fff;
+    padding: 12px 0;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    margin-top: auto; /* Empurra o botão para o final do card */
+}
+
+.product-card .whatsapp-button:hover {
+    background: #1da851;
+}
+
+/* Footer (rodapé) */
+footer {
+    background: #FF0000; /* Vermelho vivo para o footer */
+    color: #fff; /* Texto branco para contraste no footer vermelho */
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* CSS para a página de Contato */
+.text-center-with-margin {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-section-heading {
+    margin-top: 30px; 
+    color: #FFD700; /* Amarelo brilhante para títulos de informação de contato */
+}
+
+.contact-whatsapp-button {
+    background-color: #25d366; 
+    margin-top: 10px;
+}
+
+/* CSS adicional para o iframe do mapa */
+.map-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    header .container {
+        flex-direction: column;
+        padding: 15px 0;
+    }
+    
+    header h1 {
+        margin-bottom: 10px;
+    }
+
+    header nav ul {
+        padding: 0;
+    }
+
+    header li {
+        display: block;
+        padding: 5px 0;
+    }
+
+    #hero h2 {
+        font-size: 36px;
+    }
+
+    #hero p {
+        font-size: 18px;
+    }
+
+    .history-section {
+        flex-direction: column;
+    }
+
+    .history-section.reverse {
+        flex-direction: column;
+    }
+
+    .history-section img {
+        width: 100%;
+        height: 250px;
+        margin: 15px 0 0 0;
+        padding: 0; 
+    }
+    
+    .history-section div {
+        width: 100%;
+        padding: 15px;
+        margin: 0;
+    }
+
+    .history-section.reverse div {
+        padding: 15px; 
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
